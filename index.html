@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Focus Timer</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <h1>Focus Timer</h1>
+      <p class="subtitle">Work in focused sprints, log what you finish.</p>
+    </header>
+
+    <section class="timer-card">
+      <div class="mode-switch" role="tablist" aria-label="Timer mode">
+        <button class="mode-btn active" data-mode="focus" role="tab" aria-selected="true">Focus</button>
+        <button class="mode-btn" data-mode="short" role="tab" aria-selected="false">Short Break</button>
+        <button class="mode-btn" data-mode="long" role="tab" aria-selected="false">Long Break</button>
+      </div>
+
+      <div class="ring-wrap">
+        <svg class="ring" viewBox="0 0 220 220">
+          <circle class="ring-bg" cx="110" cy="110" r="100"></circle>
+          <circle class="ring-progress" cx="110" cy="110" r="100"></circle>
+        </svg>
+        <div class="ring-center">
+          <span class="time" id="timeDisplay">25:00</span>
+          <span class="session-count" id="sessionCount">Session 1</span>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button class="btn btn-secondary" id="resetBtn">Reset</button>
+        <button class="btn btn-primary" id="startBtn">Start</button>
+        <button class="btn btn-secondary" id="skipBtn">Skip</button>
+      </div>
+
+      <div class="task-input">
+        <input type="text" id="taskInput" placeholder="What are you focusing on?" maxlength="80">
+      </div>
+    </section>
+
+    <section class="log-card">
+      <div class="log-header">
+        <h2>Today's Log</h2>
+        <span class="log-summary" id="logSummary">0 sessions · 0m focused</span>
+      </div>
+      <ul class="log-list" id="logList">
+        <li class="log-empty" id="logEmpty">No sessions yet — finish one to see it here.</li>
+      </ul>
+      <button class="btn btn-text" id="clearLogBtn">Clear today's log</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
